@@ -4,8 +4,8 @@ var json = {
     "auto": "$Hello World"
 };
 angular.module('ngApp', ['angular-jsoneditor']).controller('ngCtrl', function ($scope) {
-    $scope.obj = {data: json, options: {mode: 'code', onValidate: function(json) {
-        console.log(json);
+    $scope.obj = {data: json, options: {mode: 'code', onChange: function(isValid) {
+        console.log(isValid);
             }}};
     $scope.changeData = function () {
         $scope.obj.data = {foo: 'bar'};
